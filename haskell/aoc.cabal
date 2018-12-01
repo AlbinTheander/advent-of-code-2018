@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 00e37639f40d0b0ceb77e6af25271064dc8cd64c1a52c435b34fd6abc56595f4
+-- hash: 910d3b965640bd8fc22e01dd374fc741fef87d9b777d63758f825d72d2eebf76
 
 name:           aoc
 version:        0.1.0.0
@@ -27,13 +27,13 @@ source-repository head
 library
   exposed-modules:
       Day01
-      Lib
   other-modules:
       Paths_aoc
   hs-source-dirs:
       src
   build-depends:
       base >=4.7 && <5
+    , containers
   default-language: Haskell2010
 
 executable aoc-exe

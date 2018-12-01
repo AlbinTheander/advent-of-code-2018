@@ -1,5 +1,7 @@
 module Day01 where
 
+import qualified Data.Set as Set
+
 parseSignedNum :: String -> Int
 parseSignedNum s =
   let
@@ -8,17 +10,13 @@ parseSignedNum s =
   in
     if sign == '-' then negate num else num
 
-parseData :: String -> [Int]
-parseData = map parseSignedNum . words
-  where
-    commaToSpace c = if c == ',' then ' ' else c
-
 findDuplicateFreq :: [Int] -> Int
-findDuplicateFreq freqs = doIt 0 [] (cycle freqs)
+findDuplicateFreq freqs = doIt 0 Set.empty (cycle freqs)
   where
+    doIt :: Int -> Set.Set Int -> [Int] -> Int
     doIt current previous (f : fs)
-      | current `elem` previous = current
-      | otherwise = doIt (current + f) (current : previous) fs
+      | Set.member current previous = current
+      | otherwise = doIt (current + f) (Set.insert current previous) fs
 
 
 loadInput :: IO [Int]
@@ -38,7 +36,7 @@ part2 = do
   freqs <- loadInput
   let
     firstDuplicate = findDuplicateFreq freqs
-  putStrLn ("The first frequency reached twice is" ++ show firstDuplicate)
+  putStrLn ("The first frequency reached twice is " ++ show firstDuplicate)
 
 solve :: IO ()
 solve = do

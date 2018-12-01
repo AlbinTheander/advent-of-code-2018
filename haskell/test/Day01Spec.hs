@@ -8,6 +8,9 @@ main = hspec spec
 
 spec :: Spec
 spec = describe "Day 01" $
-  describe "parseData" $
-    it "can parse a list of signed numbers, one per line" $
-      parseData "+1\n-2\n+23\n-6786" `shouldBe` [1, -2, 23, -6786]
+  describe "findDuplicateFreq" $
+    it "can handle the provided examples" $ do
+      findDuplicateFreq [1, -1] `shouldBe` 0
+      findDuplicateFreq [3, 3, 4, -2, -4] `shouldBe` 10
+      findDuplicateFreq [-6, 3, 8, 5, -6] `shouldBe` 5
+      findDuplicateFreq [7, 7, -2, -7, -4] `shouldBe` 14
