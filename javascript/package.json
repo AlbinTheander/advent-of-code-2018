@@ -1,0 +1,17 @@
+{
+  "name": "advent-of-code-2018",
+  "version": "1.0.0",
+  "description": "JS Solutions for advent of code 2018",
+  "main": "main.js",
+  "repository": "https://github.com/AlbinTheander/advent-of-code-2018",
+  "author": "Albin Theander",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node main.js"
+  },
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-node": "^4.0.0"
+  }
+}
