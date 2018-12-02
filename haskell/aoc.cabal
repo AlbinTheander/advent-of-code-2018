@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 910d3b965640bd8fc22e01dd374fc741fef87d9b777d63758f825d72d2eebf76
+-- hash: 0e07eb881c3bca6368ffe811d695fafcc6d644541d9cd711dfc3d02d6d7911c8
 
 name:           aoc
 version:        0.1.0.0
@@ -27,6 +27,7 @@ source-repository head
 library
   exposed-modules:
       Day01
+      Day02
   other-modules:
       Paths_aoc
   hs-source-dirs:
