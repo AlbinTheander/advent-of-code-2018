@@ -13,5 +13,8 @@
   "devDependencies": {
     "eslint": "^5.9.0",
     "eslint-config-node": "^4.0.0"
+  },
+  "dependencies": {
+    "ramda": "^0.26.1"
   }
 }
