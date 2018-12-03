@@ -3,6 +3,7 @@ function main() {
   console.log();
   require('./src/day01.js')();
   require('./src/day02.js')();
+  require('./src/day03.js')();
 }
 
 main();

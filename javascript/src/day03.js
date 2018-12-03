@@ -1,10 +1,5 @@
 const fs = require('fs');
 
-function parsePatch(line) {
-  const [, id, x, y, width, height] = line.split(/\D+/g).map(Number);
-  return { id, x, y, width, height };
-}
-
 function paint(cloth, patch) {
   let isUnbroken = true;
   for(let y = patch.y; y < patch.y + patch.height; y++)
@@ -33,14 +28,37 @@ function getOverlappingCount(patches) {
   let count = 0;
   for(let y = 0; y < 1000; y++)
     cloth.fabric[y].forEach(n => { if (n === -1) count++; });
-  console.log(cloth.unBrokenPatches);
   return count;
 }
 
-function part1() {
-  const patches = fs.readFileSync('../input/day03.txt', 'utf-8').split('\n').map(parsePatch);
-  const count = getOverlappingCount(patches);
-  console.log(count);
+function readPatches() {
+  const parsePatch = line => {
+    const [, id, x, y, width, height] = line.split(/\D+/g).map(Number);
+    return { id, x, y, width, height };
+  };
+
+  return fs.readFileSync('../input/day03.txt', 'utf-8')
+    .split('\n')
+    .map(parsePatch);
 }
 
-part1();
+function part1() {
+  const patches = readPatches();
+  const count = getOverlappingCount(patches);
+  console.log('There are', count, 'square inches that are covered by two or more patches');
+}
+
+function part2() {
+  const patches = readPatches();
+  const cloth = createCloth(1000, 1000);
+  patches.forEach(patch => paint(cloth, patch));
+  const [result] = cloth.unBrokenPatches;
+  console.log('The only unbroken patch is #' + result);
+}
+
+module.exports = function solve() {
+  console.log();
+  console.log('Day 3');
+  part1();
+  part2();
+}
