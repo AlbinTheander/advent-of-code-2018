@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 0e07eb881c3bca6368ffe811d695fafcc6d644541d9cd711dfc3d02d6d7911c8
+-- hash: 8532fa243e2ae02b4a88005db386783429fbb3ec56378b333f315918f4369990
 
 name:           aoc
 version:        0.1.0.0
@@ -28,12 +28,16 @@ library
   exposed-modules:
       Day01
       Day02
+      Day03
+      Util
+
   other-modules:
       Paths_aoc
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5
+      array
+    , base >=4.7 && <5
     , containers
   default-language: Haskell2010
 
@@ -54,6 +58,7 @@ test-suite aoc-test
   main-is: Spec.hs
   other-modules:
       Day01Spec
+      UtilSpec
       Paths_aoc
   hs-source-dirs:
       test
