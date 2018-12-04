@@ -53,7 +53,7 @@ function part2() {
   const cloth = createCloth(1000, 1000);
   patches.forEach(patch => paint(cloth, patch));
   const [result] = cloth.unBrokenPatches;
-  console.log('The only unbroken patch is #' + result);
+  console.log(`The only unbroken patch is #${result}`);
 }
 
 module.exports = function solve() {
