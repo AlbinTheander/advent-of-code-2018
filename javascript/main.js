@@ -7,6 +7,7 @@ function main() {
   require('./src/day04.js')();
   require('./src/day05.js')();
   require('./src/day06.js')();
+  require('./src/day07.js')();
 }
 
 main();
