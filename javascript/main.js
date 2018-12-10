@@ -10,6 +10,7 @@ function main() {
   require('./src/day07.js')();
   require('./src/day08.js')();
   require('./src/day09.js')();
+  require('./src/day10.js')();
 }
 
 main();
