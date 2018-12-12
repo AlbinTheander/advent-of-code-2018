@@ -11,6 +11,8 @@ function main() {
   require('./src/day08.js')();
   require('./src/day09.js')();
   require('./src/day10.js')();
+
+  require('./src/day12.js')();
 }
 
 main();
